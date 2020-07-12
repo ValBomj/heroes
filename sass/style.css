@@ -1,0 +1,197 @@
+html {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+*, *::before, *::after {
+  -webkit-box-sizing: inherit;
+          box-sizing: inherit;
+}
+
+body {
+  font-family: 'Montserrat', sans-serif;
+  background-image: -webkit-gradient(linear, left top, right top, from(#034378), to(#2d4e68));
+  background-image: linear-gradient(to right, #034378, #2d4e68);
+  min-height: 100vh;
+}
+
+.title {
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+
+.heroes .container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.heroes__control {
+  max-width: 25%;
+  width: 100%;
+  height: 100vh;
+  background: -webkit-gradient(linear, left top, right bottom, from(#50a3a2), to(#53e3a6));
+  background: linear-gradient(to bottom right, #50a3a2 0%, #53e3a6 100%);
+  position: fixed;
+  left: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.heroes__control-block {
+  max-width: 300px;
+  width: 100%;
+}
+
+.heroes__control-block button,
+.heroes__control-block select {
+  display: block;
+  width: 100%;
+  height: 60px;
+  border: 3px solid #034378;
+  color: #034378;
+  background: transparent;
+  text-transform: uppercase;
+  font-weight: 700;
+  cursor: pointer;
+  outline: none;
+}
+
+.heroes__control-block select {
+  display: none;
+}
+
+.heroes__inner {
+  padding-top: 120px;
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  margin-left: -30px;
+  overflow: auto;
+  max-width: 75%;
+  position: absolute;
+  right: 0;
+}
+
+.heroes__card {
+  -ms-flex-preferred-size: calc(24% - 30px);
+      flex-basis: calc(24% - 30px);
+  margin-left: 30px;
+  border: 1px solid black;
+  border-radius: 8px;
+  background-color: #fff;
+  -webkit-box-shadow: 0 19px 38px rgba(0, 0, 0, 0.3), 0 15px 12px rgba(0, 0, 0, 0.2);
+          box-shadow: 0 19px 38px rgba(0, 0, 0, 0.3), 0 15px 12px rgba(0, 0, 0, 0.2);
+  margin-bottom: 30px;
+  height: 500px;
+  overflow: hidden;
+  position: relative;
+}
+
+.heroes__card:hover .heroes__card-inner {
+  height: 100%;
+  color: #fff;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.5);
+  padding: 15px;
+}
+
+.heroes__card:hover .heroes__card-inner::-webkit-scrollbar {
+  width: 0;
+}
+
+.heroes__card:hover .heroes__card-image::before {
+  opacity: 0;
+}
+
+.heroes__card:hover .heroes__card-name span {
+  display: block;
+}
+
+.heroes__card-image {
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
+  width: 100%;
+  min-height: 500px;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  position: relative;
+  overflow: hidden;
+}
+
+.heroes__card-image::before {
+  position: absolute;
+  content: '';
+  width: 120%;
+  height: 70px;
+  background-color: #fff;
+  -webkit-transform: rotate(10deg) translateX(-50%);
+          transform: rotate(10deg) translateX(-50%);
+  left: 50%;
+  bottom: -75px;
+  -webkit-transition: all .3s;
+  transition: all .3s;
+}
+
+.heroes__card-inner {
+  position: absolute;
+  -webkit-transition: all .3s;
+  transition: all .3s;
+  height: 25px;
+  padding: 0 15px;
+  width: 100%;
+  bottom: 0;
+}
+
+.heroes__card-inner ul {
+  padding: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  margin-left: -10px;
+}
+
+.heroes__card-inner ul li {
+  list-style: none;
+  display: block;
+  background-color: #e6c3c3;
+  border-radius: 30px;
+  margin-left: 10px;
+  font-size: 14px;
+  margin-bottom: 10px;
+  padding: 3px 5px;
+  color: #000;
+}
+
+.heroes__card-descr {
+  position: relative;
+  z-index: 2;
+  margin-bottom: 30px;
+}
+
+.heroes__card-name {
+  margin-bottom: 10px;
+}
+
+.heroes__card-name span {
+  display: none;
+  font-weight: 400;
+}
+
+.heroes__card-period {
+  margin-top: 5px;
+}
+/*# sourceMappingURL=style.css.map */

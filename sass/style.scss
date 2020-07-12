@@ -1,0 +1,159 @@
+html {
+  box-sizing: border-box;
+}
+*, *::before, *::after {
+  box-sizing: inherit;
+}
+body {
+  font-family: 'Montserrat', sans-serif;
+  background-image: linear-gradient(to right, #034378, #2d4e68);
+  min-height: 100vh;
+}
+.title {
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+.heroes {
+  .container {
+    display: flex;
+  }
+  &__control {
+    max-width: 25%;
+    width: 100%;
+    height: 100vh;
+    background: -webkit-linear-gradient(top left, #50a3a2 0%, #53e3a6 100%);
+    background: -moz-linear-gradient(top left, #50a3a2 0%, #53e3a6 100%);
+    background: -o-linear-gradient(top left, #50a3a2 0%, #53e3a6 100%);
+    background: linear-gradient(to bottom right, #50a3a2 0%, #53e3a6 100%);
+    position: fixed;
+    left: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    &-block {
+      max-width: 300px;
+      width: 100%;
+      button,
+      select {
+        display: block;
+        width: 100%;
+        height: 60px;
+        border: 3px solid #034378;
+        color: #034378;
+        background: transparent;
+        text-transform: uppercase;
+        font-weight: 700;
+        cursor: pointer;
+        outline: none;
+      }
+      select {
+        display: none;
+      }
+    }
+  }
+  &__inner {
+    padding-top: 120px;
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    margin-left: -30px;
+    overflow: auto;
+    max-width: 75%;
+    position: absolute;
+    right: 0;
+  }
+  &__card {
+    flex-basis: calc(24% - 30px);
+    margin-left: 30px;
+    border: 1px solid black;
+    border-radius: 8px;
+    background-color: #fff;
+    box-shadow: 0 19px 38px rgba(#000, 0.3), 0 15px 12px rgba(#000, 0.2);
+    margin-bottom: 30px;
+    height: 500px;
+    overflow: hidden;
+    position: relative;
+    &:hover {
+      .heroes__card-inner {
+        height: 100%;
+        color: #fff;
+        overflow: auto;
+        &::-webkit-scrollbar { width: 0; }
+        background-color: rgba(#000, .5);
+        padding: 15px;
+      }
+      .heroes__card-image {
+        &::before {
+          opacity: 0;
+        }
+      }
+      .heroes__card-name {
+        span {
+          display: block;
+        }
+      }
+    }
+    &-image {
+      border-top-left-radius: 8px;
+      border-top-right-radius: 8px;
+      width: 100%;
+      min-height: 500px;
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      position: relative;
+      overflow: hidden;
+      &::before {
+        position: absolute;
+        content: '';
+        width: 120%;
+        height: 70px;
+        background-color: #fff;
+        transform: rotate(10deg) translateX(-50%);
+        left: 50%;
+        bottom: -75px;
+        transition: all .3s;
+      }
+    }
+    &-inner {
+      position: absolute;
+      transition: all .3s;
+      height: 25px;
+      padding: 0 15px;
+      width: 100%;
+      bottom: 0;
+      ul {
+        padding: 0;
+        display: flex;
+        flex-wrap: wrap;
+        margin-left: -10px;
+        li {
+          list-style: none;
+          display: block;
+          background-color: rgb(230, 195, 195);
+          border-radius: 30px;
+          margin-left: 10px;
+          font-size: 14px;
+          margin-bottom: 10px;
+          padding: 3px 5px;
+          color: #000;
+        }
+      }
+    }
+    &-descr {
+      position: relative;
+      z-index: 2;
+      margin-bottom: 30px;
+    }
+    &-name {  
+      margin-bottom: 10px;
+      span {
+        display: none;
+        font-weight: 400;
+      }
+    }
+    &-period {
+      margin-top: 5px;
+    }
+  }
+}
